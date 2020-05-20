@@ -8,9 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import it.objectmethod.cceservicelayer.domain.ClienteEntity;
+import it.objectmethod.cceservicelayer.domain.IndirizziClienteEntity;
 import it.objectmethod.cceservicelayer.repository.ClienteRepository;
 import it.objectmethod.cceservicelayer.service.dto.ClienteDTO;
 import it.objectmethod.cceservicelayer.service.mapper.ClienteMapper;
+import it.objectmethod.cceservicelayer.service.mapper.IndirizziClienteMapper;
 
 @Component
 public class ClienteService {
@@ -20,6 +22,9 @@ public class ClienteService {
 
 	@Autowired
 	private ClienteMapper clienteMapper;
+
+	@Autowired
+	private IndirizziClienteMapper indirizziMapper;
 
 	public ResponseEntity<ClienteDTO> getClienteById(int id) {
 		ResponseEntity<ClienteDTO> resp = null;
@@ -45,6 +50,33 @@ public class ClienteService {
 			resp = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return resp;
+	}
+
+	public ResponseEntity<ClienteDTO> saveCliente(ClienteEntity c) {
+		ResponseEntity<ClienteDTO> resp = null;
+		try {
+			for (IndirizziClienteEntity indirizzi : c.getIndirizzi()) {
+				indirizzi.setCliente(c);
+			}
+			ClienteDTO clienteSalvato = clienteMapper.toDto(clienteRepo.save(c));
+			resp = new ResponseEntity<>(clienteSalvato, HttpStatus.ACCEPTED);
+		} catch (Exception e) {
+			System.out.println(e);
+			resp = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		return resp;
+	}
+
+	public ResponseEntity<ClienteDTO> deleteCliente(int id) {
+		ResponseEntity<ClienteDTO> resp = null;
+		try {
+			clienteRepo.deleteById(id);
+			resp = new ResponseEntity<>(HttpStatus.ACCEPTED);
+		} catch (Exception e) {
+			resp = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		return resp;
+
 	}
 
 }
