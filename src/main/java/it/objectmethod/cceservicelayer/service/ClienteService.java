@@ -12,7 +12,6 @@ import it.objectmethod.cceservicelayer.domain.IndirizziClienteEntity;
 import it.objectmethod.cceservicelayer.repository.ClienteRepository;
 import it.objectmethod.cceservicelayer.service.dto.ClienteDTO;
 import it.objectmethod.cceservicelayer.service.mapper.ClienteMapper;
-import it.objectmethod.cceservicelayer.service.mapper.IndirizziClienteMapper;
 
 @Component
 public class ClienteService {
@@ -22,9 +21,6 @@ public class ClienteService {
 
 	@Autowired
 	private ClienteMapper clienteMapper;
-
-	@Autowired
-	private IndirizziClienteMapper indirizziMapper;
 
 	public ResponseEntity<ClienteDTO> getClienteById(int id) {
 		ResponseEntity<ClienteDTO> resp = null;
@@ -61,7 +57,6 @@ public class ClienteService {
 			ClienteDTO clienteSalvato = clienteMapper.toDto(clienteRepo.save(c));
 			resp = new ResponseEntity<>(clienteSalvato, HttpStatus.ACCEPTED);
 		} catch (Exception e) {
-			System.out.println(e);
 			resp = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 		return resp;

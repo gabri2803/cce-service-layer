@@ -3,7 +3,6 @@ package it.objectmethod.cceservicelayer.service.mapper;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import it.objectmethod.cceservicelayer.domain.ClienteEntity;
@@ -11,9 +10,6 @@ import it.objectmethod.cceservicelayer.service.dto.ClienteDTO;
 
 @Component
 public class ClienteMapper implements EntityMapper<ClienteDTO, ClienteEntity> {
-
-	@Autowired
-	private IndirizziClienteMapper indirizziMapper;
 
 	@Override
 	public ClienteEntity toEntity(ClienteDTO dto) {
@@ -41,7 +37,6 @@ public class ClienteMapper implements EntityMapper<ClienteDTO, ClienteEntity> {
 		entity.setStatoNascita(dto.getStatoNascita());
 		entity.setTelefono(dto.getTelefono());
 		entity.setTipo(dto.getTipo());
-		entity.setIndirizzi(indirizziMapper.toEntity(dto.getIndirizzi()));
 		return entity;
 	}
 
@@ -71,7 +66,6 @@ public class ClienteMapper implements EntityMapper<ClienteDTO, ClienteEntity> {
 		dto.setStatoNascita(entity.getStatoNascita());
 		dto.setTelefono(entity.getTelefono());
 		dto.setTipo(entity.getTipo());
-		dto.setIndirizzi(indirizziMapper.toDto(entity.getIndirizzi()));
 		return dto;
 	}
 
@@ -103,7 +97,6 @@ public class ClienteMapper implements EntityMapper<ClienteDTO, ClienteEntity> {
 			entity.setStatoNascita(dto.getStatoNascita());
 			entity.setTelefono(dto.getTelefono());
 			entity.setTipo(dto.getTipo());
-			entity.setIndirizzi(indirizziMapper.toEntity(dto.getIndirizzi()));
 			entityList.add(entity);
 		}
 		return entityList;
@@ -137,7 +130,6 @@ public class ClienteMapper implements EntityMapper<ClienteDTO, ClienteEntity> {
 			dto.setStatoNascita(entity.getStatoNascita());
 			dto.setTelefono(entity.getTelefono());
 			dto.setTipo(entity.getTipo());
-			dto.setIndirizzi(indirizziMapper.toDto(entity.getIndirizzi()));
 			dtoList.add(dto);
 		}
 		return dtoList;

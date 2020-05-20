@@ -1,7 +1,5 @@
 package it.objectmethod.cceservicelayer.service.dto;
 
-import java.util.List;
-
 public class ClienteDTO {
 
 	private int id;
@@ -49,8 +47,6 @@ public class ClienteDTO {
 	private String note;
 
 	private String email;
-
-	private List<IndirizziClienteDTO> indirizzi;
 
 	public int getId() {
 		return id;
@@ -236,14 +232,6 @@ public class ClienteDTO {
 		this.email = email;
 	}
 
-	public List<IndirizziClienteDTO> getIndirizzi() {
-		return indirizzi;
-	}
-
-	public void setIndirizzi(List<IndirizziClienteDTO> indirizzi) {
-		this.indirizzi = indirizzi;
-	}
-
 	@Override
 	public String toString() {
 		return "ClienteDTO [id=" + id + ", ragioneSociale=" + ragioneSociale + ", codiceFiscale=" + codiceFiscale
@@ -252,8 +240,7 @@ public class ClienteDTO {
 				+ ", stato=" + stato + ", cellulare=" + cellulare + ", cognome=" + cognome + ", comuneNascita="
 				+ comuneNascita + ", nome=" + nome + ", provinciaNascita=" + provinciaNascita + ", sesso=" + sesso
 				+ ", statoNascita=" + statoNascita + ", tipo=" + tipo + ", dataNascita=" + dataNascita
-				+ ", condizioniPagamento=" + condizioniPagamento + ", note=" + note + ", email=" + email
-				+ ", indirizzi=" + indirizzi + "]";
+				+ ", condizioniPagamento=" + condizioniPagamento + ", note=" + note + ", email=" + email + "]";
 	}
 
 }
