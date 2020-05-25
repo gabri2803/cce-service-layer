@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.objectmethod.cceservicelayer.domain.ClienteEntity;
 import it.objectmethod.cceservicelayer.service.ClienteService;
-import it.objectmethod.cceservicelayer.service.IndirizziClienteService;
 import it.objectmethod.cceservicelayer.service.dto.ClienteDTO;
 
 @RestController
@@ -23,9 +22,6 @@ public class ClienteController {
 
 	@Autowired
 	private ClienteService clienteService;
-
-	@Autowired
-	private IndirizziClienteService indirizziService;
 
 	@GetMapping("/{id}/findById")
 	public ResponseEntity<ClienteDTO> getClienteById(@PathVariable("id") int id) {

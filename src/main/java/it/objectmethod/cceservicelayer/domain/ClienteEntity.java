@@ -91,6 +91,10 @@ public class ClienteEntity {
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<IndirizziClienteEntity> indirizzi;
 
+	@JoinColumn(name = "cliente_id")
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<CopiaCommissioneEntity> copiaCommissione;
+
 	public int getId() {
 		return id;
 	}
@@ -283,6 +287,14 @@ public class ClienteEntity {
 		this.indirizzi = indirizzi;
 	}
 
+	public List<CopiaCommissioneEntity> getCopiaCommissione() {
+		return copiaCommissione;
+	}
+
+	public void setCopiaCommissione(List<CopiaCommissioneEntity> copiaCommissione) {
+		this.copiaCommissione = copiaCommissione;
+	}
+
 	@Override
 	public String toString() {
 		return "ClienteEntity [id=" + id + ", ragioneSociale=" + ragioneSociale + ", codiceFiscale=" + codiceFiscale
@@ -292,7 +304,7 @@ public class ClienteEntity {
 				+ comuneNascita + ", nome=" + nome + ", provinciaNascita=" + provinciaNascita + ", sesso=" + sesso
 				+ ", statoNascita=" + statoNascita + ", tipo=" + tipo + ", dataNascita=" + dataNascita
 				+ ", condizioniPagamento=" + condizioniPagamento + ", note=" + note + ", email=" + email
-				+ ", indirizzi=" + indirizzi + "]";
+				+ ", indirizzi=" + indirizzi + ", copiaCommissione=" + copiaCommissione + "]";
 	}
 
 }

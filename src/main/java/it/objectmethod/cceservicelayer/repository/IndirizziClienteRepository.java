@@ -9,6 +9,7 @@ import it.objectmethod.cceservicelayer.domain.IndirizziClienteEntity;
 
 @Repository
 public interface IndirizziClienteRepository extends JpaRepository<IndirizziClienteEntity, Integer> {
+
 	List<IndirizziClienteEntity> findAllByClienteId(int id);
 
 }
