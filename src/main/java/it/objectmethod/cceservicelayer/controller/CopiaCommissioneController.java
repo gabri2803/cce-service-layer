@@ -24,7 +24,8 @@ public class CopiaCommissioneController {
 	}
 
 //	@PostMapping("/save")
-//	public ResponseEntity<CopiaCommissioneDTO> saveCopiaCommissione(@RequestBody CopiaCommissioneDTO dto) {
+//	public ResponseEntity<CopiaCommissioneDTO> saveCopiaCommissione(
+//			@RequestBody(required = false) CopiaCommissioneDTO dto) {
 //		ResponseEntity<CopiaCommissioneDTO> resp = commissioneService.saveCopiaCommissione(dto);
 //		return resp;
 //	}

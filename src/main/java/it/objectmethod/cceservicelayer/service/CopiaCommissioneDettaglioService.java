@@ -1,5 +1,7 @@
 package it.objectmethod.cceservicelayer.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +30,17 @@ public class CopiaCommissioneDettaglioService {
 			resp = new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		return resp;
+	}
 
+	public ResponseEntity<List<CopiaCommissioneDettaglioDTO>> getAllByIdCommissione(Integer idComm) {
+		ResponseEntity<List<CopiaCommissioneDettaglioDTO>> resp = null;
+		List<CopiaCommissioneDettaglioDTO> dettaglioDto = null;
+		try {
+			dettaglioDto = dettaglioMapper.toDto(dettaglioRepo.findAllByCopiaCommissioneId(idComm));
+			resp = new ResponseEntity<>(dettaglioDto, HttpStatus.OK);
+		} catch (Exception e) {
+			resp = new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return resp;
 	}
 }

@@ -3,8 +3,6 @@ package it.objectmethod.cceservicelayer.service.dto;
 import java.util.Date;
 import java.util.List;
 
-import it.objectmethod.cceservicelayer.domain.CopiaCommissioneDettaglioEntity;
-
 public class CopiaCommissioneDTO {
 
 	private int id;
@@ -35,7 +33,7 @@ public class CopiaCommissioneDTO {
 
 	private Long idCondizioniPagamento;
 
-	private List<CopiaCommissioneDettaglioEntity> commissioneDettaglio;
+	private List<CopiaCommissioneDettaglioDTO> commissioneDettaglio;
 
 	public int getId() {
 		return id;
@@ -149,11 +147,21 @@ public class CopiaCommissioneDTO {
 		this.idCondizioniPagamento = idCondizionePagamento;
 	}
 
-	public List<CopiaCommissioneDettaglioEntity> getCommissioneDettaglio() {
+	public List<CopiaCommissioneDettaglioDTO> getCommissioneDettaglio() {
 		return commissioneDettaglio;
 	}
 
-	public void setCommissioneDettaglio(List<CopiaCommissioneDettaglioEntity> commissioneDettaglio) {
+	public void setCommissioneDettaglio(List<CopiaCommissioneDettaglioDTO> commissioneDettaglio) {
 		this.commissioneDettaglio = commissioneDettaglio;
+	}
+
+	@Override
+	public String toString() {
+		return "CopiaCommissioneDTO [id=" + id + ", data=" + data + ", note=" + note + ", stato=" + stato + ", numero="
+				+ numero + ", mezzoConsegnaVettore=" + mezzoConsegnaVettore + ", ragioneSocialeCliente="
+				+ ragioneSocialeCliente + ", esportato=" + esportato + ", evaso=" + evaso + ", importoTot=" + importoTot
+				+ ", importoTotScontato=" + importoTotScontato + ", spesaIncasso=" + spesaIncasso + ", idCliente="
+				+ idCliente + ", idCondizioniPagamento=" + idCondizioniPagamento + ", commissioneDettaglio="
+				+ commissioneDettaglio + "]";
 	}
 }

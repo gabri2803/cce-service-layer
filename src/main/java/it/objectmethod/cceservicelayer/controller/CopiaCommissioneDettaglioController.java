@@ -1,5 +1,7 @@
 package it.objectmethod.cceservicelayer.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +22,13 @@ public class CopiaCommissioneDettaglioController {
 	@GetMapping("/{id}/findById")
 	public ResponseEntity<CopiaCommissioneDettaglioDTO> getDettaglioCommissioneById(@PathVariable("id") Integer id) {
 		ResponseEntity<CopiaCommissioneDettaglioDTO> resp = dettaglioService.getById(id);
+		return resp;
+	}
+
+	@GetMapping("{idCommissione}/findByIdCommissione")
+	public ResponseEntity<List<CopiaCommissioneDettaglioDTO>> getDettagliByCommissione(
+			@PathVariable("idCommissione") Integer idComm) {
+		ResponseEntity<List<CopiaCommissioneDettaglioDTO>> resp = dettaglioService.getAllByIdCommissione(idComm);
 		return resp;
 	}
 

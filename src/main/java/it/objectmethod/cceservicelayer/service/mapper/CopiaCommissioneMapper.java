@@ -20,11 +20,14 @@ public class CopiaCommissioneMapper implements EntityMapper<CopiaCommissioneDTO,
 	@Autowired
 	private CondizioniPagamentoRepository condizioniPagamentoRepo;
 
+	@Autowired
+	private CopiaCommissioneDettaglioMapper dettaglioMapper;
+
 	@Override
 	public CopiaCommissioneEntity toEntity(CopiaCommissioneDTO dto) {
 		CopiaCommissioneEntity entity = new CopiaCommissioneEntity();
 		entity.setId(dto.getId());
-		entity.setCommissioneDettaglio(dto.getCommissioneDettaglio());
+		entity.setCommissioneDettaglio(dettaglioMapper.toEntity(dto.getCommissioneDettaglio()));
 		entity.setData(dto.getData());
 		entity.setEsportato(dto.getEsportato());
 		entity.setEvaso(dto.getEvaso());
@@ -46,7 +49,7 @@ public class CopiaCommissioneMapper implements EntityMapper<CopiaCommissioneDTO,
 		CopiaCommissioneDTO dto = new CopiaCommissioneDTO();
 		dto.setId(entity.getId());
 		dto.setIdCliente(entity.getCliente().getId());
-		dto.setCommissioneDettaglio(entity.getCommissioneDettaglio());
+		dto.setCommissioneDettaglio(dettaglioMapper.toDto(entity.getCommissioneDettaglio()));
 		dto.setIdCondizioniPagamento(entity.getCondizioniPagamento().getId());
 		dto.setData(entity.getData());
 		dto.setEsportato(entity.getEsportato());
@@ -68,7 +71,7 @@ public class CopiaCommissioneMapper implements EntityMapper<CopiaCommissioneDTO,
 		for (CopiaCommissioneDTO dto : dtoList) {
 			CopiaCommissioneEntity entity = new CopiaCommissioneEntity();
 			entity.setId(dto.getId());
-			entity.setCommissioneDettaglio(dto.getCommissioneDettaglio());
+			entity.setCommissioneDettaglio(dettaglioMapper.toEntity(dto.getCommissioneDettaglio()));
 			entity.setData(dto.getData());
 			entity.setEsportato(dto.getEsportato());
 			entity.setEvaso(dto.getEvaso());
@@ -95,7 +98,7 @@ public class CopiaCommissioneMapper implements EntityMapper<CopiaCommissioneDTO,
 			dto.setId(entity.getId());
 			dto.setIdCliente(entity.getCliente().getId());
 			dto.setIdCondizioniPagamento(entity.getCondizioniPagamento().getId());
-			dto.setCommissioneDettaglio(entity.getCommissioneDettaglio());
+			dto.setCommissioneDettaglio(dettaglioMapper.toDto(entity.getCommissioneDettaglio()));
 			dto.setData(entity.getData());
 			dto.setEsportato(entity.getEsportato());
 			dto.setEvaso(entity.getEvaso());
