@@ -87,11 +87,11 @@ public class ClienteEntity {
 	@Column(name = "email")
 	private String email;
 
-	@JoinColumn(name = "cliente_id")
+	@JoinColumn(name = "cliente_id", insertable = false, updatable = false)
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<IndirizziClienteEntity> indirizzi;
 
-	@JoinColumn(name = "cliente_id")
+	@JoinColumn(name = "cliente_id", insertable = false, updatable = false)
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<CopiaCommissioneEntity> copiaCommissione;
 

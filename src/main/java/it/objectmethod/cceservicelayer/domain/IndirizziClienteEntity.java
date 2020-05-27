@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class IndirizziClienteEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	@Column(name = "indirizzo")
