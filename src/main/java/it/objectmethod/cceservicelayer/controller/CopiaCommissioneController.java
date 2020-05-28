@@ -2,7 +2,6 @@ package it.objectmethod.cceservicelayer.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,9 +32,9 @@ public class CopiaCommissioneController {
 		return resp;
 	}
 
-	@DeleteMapping("{idCommissione}/delete")
-	public ResponseEntity<CopiaCommissioneDTO> deleteCopiaCommissione(@PathVariable("idCommissione") int id) {
-		ResponseEntity<CopiaCommissioneDTO> resp = commissioneService.deleteCopiaCommissione(id);
-		return resp;
-	}
+//	@DeleteMapping("{idCommissione}/delete")
+//	public ResponseEntity<CopiaCommissioneDTO> deleteCopiaCommissione(@PathVariable("idCommissione") int id) {
+//		ResponseEntity<CopiaCommissioneDTO> resp = commissioneService.deleteCopiaCommissione(id);
+//		return resp;
+//	}
 }

@@ -52,14 +52,14 @@ public class CopiaCommissioneService {
 		return resp;
 	}
 
-	public ResponseEntity<CopiaCommissioneDTO> deleteCopiaCommissione(int id) {
-		ResponseEntity<CopiaCommissioneDTO> resp = null;
-		try {
-			commissioneRepo.deleteById(id);
-			resp = new ResponseEntity<>(HttpStatus.ACCEPTED);
-		} catch (Exception e) {
-			resp = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-		return resp;
-	}
+//	public ResponseEntity<CopiaCommissioneDTO> deleteCopiaCommissione(int id) {
+//		ResponseEntity<CopiaCommissioneDTO> resp = null;
+//		try {
+//			commissioneRepo.deleteById(id);
+//			resp = new ResponseEntity<>(HttpStatus.ACCEPTED);
+//		} catch (Exception e) {
+//			resp = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//		}
+//		return resp;
+//	}
 }
