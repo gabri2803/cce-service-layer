@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class CopiaCommissioneDettaglioEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	@Column(name = "sconto")
@@ -39,12 +39,12 @@ public class CopiaCommissioneDettaglioEntity {
 	@Column(name = "pezzi_inviati")
 	private Integer pezziInviati;
 
-	@ManyToOne
 	@JsonIgnore
+	@ManyToOne
 	private CopiaCommissioneEntity copiaCommissione;
 
-	@ManyToOne
 	@JsonIgnore
+	@ManyToOne
 	private ProdottoEntity prodotto;
 
 	public int getId() {

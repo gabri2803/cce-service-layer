@@ -22,8 +22,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class CopiaCommissioneEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
 	@Column(name = "data")
 	private Date data;
@@ -62,19 +62,19 @@ public class CopiaCommissioneEntity {
 	@JsonIgnore
 	private ClienteEntity cliente;
 
-	@ManyToOne
 	@JsonIgnore
+	@ManyToOne
 	private CondizioniPagamentoEntity condizioniPagamento;
 
 	@JoinColumn(name = "copiaCommissione_id")
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<CopiaCommissioneDettaglioEntity> commissioneDettaglio;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

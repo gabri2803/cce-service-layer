@@ -18,8 +18,7 @@ import javax.persistence.Table;
 public class LineaProdottoEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-//	@OneToOne
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(name = "codice")
@@ -31,10 +30,6 @@ public class LineaProdottoEntity {
 	@JoinColumn(name = "linea_prodotto_id")
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<ProdottoEntity> prodotti;
-
-//	@JoinColumn(name = "id_linea_prodotto_padre")
-//	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//	private Long idLineaProdottoPadre;
 
 	public Long getId() {
 		return id;

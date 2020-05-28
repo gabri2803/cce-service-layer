@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
+import it.objectmethod.cceservicelayer.domain.CopiaCommissioneDettaglioEntity;
 import it.objectmethod.cceservicelayer.domain.CopiaCommissioneEntity;
 import it.objectmethod.cceservicelayer.repository.CopiaCommissioneRepository;
 import it.objectmethod.cceservicelayer.service.dto.CopiaCommissioneDTO;
@@ -36,18 +37,29 @@ public class CopiaCommissioneService {
 		return resp;
 	}
 
-//	public ResponseEntity<CopiaCommissioneDTO> saveCopiaCommissione(CopiaCommissioneDTO dto) {
-//		ResponseEntity<CopiaCommissioneDTO> resp = null;
-//		CopiaCommissioneEntity entity = commissioneMapper.toEntity(dto);
-//		try {
-//			for (CopiaCommissioneDettaglioEntity dettagli : entity.getCommissioneDettaglio()) {
-//				dettagli.setCopiaCommissione(entity);
-//			}
-//			CopiaCommissioneDTO commissioneInserita = commissioneMapper.toDto(commissioneRepo.save(entity));
-//			resp = new ResponseEntity<>(commissioneInserita, HttpStatus.ACCEPTED);
-//		} catch (Exception e) {
-//			resp = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-//		}
-//		return resp;
-//	}
+	public ResponseEntity<CopiaCommissioneDTO> saveCopiaCommissione(CopiaCommissioneDTO dto) {
+		ResponseEntity<CopiaCommissioneDTO> resp = null;
+		CopiaCommissioneEntity entity = commissioneMapper.toEntity(dto);
+		try {
+			for (CopiaCommissioneDettaglioEntity dettagli : entity.getCommissioneDettaglio()) {
+				dettagli.setCopiaCommissione(entity);
+			}
+			CopiaCommissioneDTO commissioneInserita = commissioneMapper.toDto(commissioneRepo.save(entity));
+			resp = new ResponseEntity<>(commissioneInserita, HttpStatus.ACCEPTED);
+		} catch (Exception e) {
+			resp = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		return resp;
+	}
+
+	public ResponseEntity<CopiaCommissioneDTO> deleteCopiaCommissione(int id) {
+		ResponseEntity<CopiaCommissioneDTO> resp = null;
+		try {
+			commissioneRepo.deleteById(id);
+			resp = new ResponseEntity<>(HttpStatus.ACCEPTED);
+		} catch (Exception e) {
+			resp = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		return resp;
+	}
 }

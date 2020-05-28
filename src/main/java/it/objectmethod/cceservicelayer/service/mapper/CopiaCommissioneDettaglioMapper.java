@@ -24,7 +24,10 @@ public class CopiaCommissioneDettaglioMapper
 	@Override
 	public CopiaCommissioneDettaglioEntity toEntity(CopiaCommissioneDettaglioDTO dto) {
 		CopiaCommissioneDettaglioEntity entity = new CopiaCommissioneDettaglioEntity();
-		entity.setCopiaCommissione(copiaCommissioneRepo.findById(dto.getIdCopiaCommissione()).get());
+		if (dto.getIdCopiaCommissione() != null) {
+			entity.setCopiaCommissione(copiaCommissioneRepo.findById(dto.getIdCopiaCommissione()).get());
+		}
+
 		entity.setEvaso(dto.getEvaso());
 		entity.setId(dto.getId());
 		entity.setImporto(dto.getImporto());
@@ -58,7 +61,9 @@ public class CopiaCommissioneDettaglioMapper
 		List<CopiaCommissioneDettaglioEntity> entityList = new ArrayList<>();
 		for (CopiaCommissioneDettaglioDTO dto : dtoList) {
 			CopiaCommissioneDettaglioEntity entity = new CopiaCommissioneDettaglioEntity();
-			entity.setCopiaCommissione(copiaCommissioneRepo.findById(dto.getIdCopiaCommissione()).get());
+			if (dto.getIdCopiaCommissione() != null) {
+				entity.setCopiaCommissione(copiaCommissioneRepo.findById(dto.getIdCopiaCommissione()).get());
+			}
 			entity.setEvaso(dto.getEvaso());
 			entity.setId(dto.getId());
 			entity.setImporto(dto.getImporto());
