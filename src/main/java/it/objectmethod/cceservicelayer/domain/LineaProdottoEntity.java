@@ -27,7 +27,7 @@ public class LineaProdottoEntity {
 	@Column(name = "descrizione")
 	private String descrizione;
 
-	@JoinColumn(name = "linea_prodotto_id")
+	@JoinColumn(name = "id_linea_prodotto")
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<ProdottoEntity> prodotti;
 

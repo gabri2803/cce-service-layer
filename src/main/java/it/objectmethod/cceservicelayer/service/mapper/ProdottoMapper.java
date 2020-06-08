@@ -28,7 +28,7 @@ public class ProdottoMapper implements EntityMapper<ProdottoDTO, ProdottoEntity>
 		entity.setDescrizione(dto.getDescrizione());
 		entity.setDescrizioneBreve(dto.getDescrizioneBreve());
 		entity.setDescrizioneInglese(dto.getDescrizioneInglese());
-		entity.setDescrizioneSto(dto.getDescrizioneSto());
+		entity.setDescrizioneSito(dto.getDescrizioneSito());
 		entity.setErogatore(dto.getErogatore());
 		entity.setEsportato(dto.getEsportato());
 		entity.setEsportatoPbb(dto.getEsportatoPbb());
@@ -67,7 +67,7 @@ public class ProdottoMapper implements EntityMapper<ProdottoDTO, ProdottoEntity>
 		dto.setDescrizione(entity.getDescrizione());
 		dto.setDescrizioneBreve(entity.getDescrizioneBreve());
 		dto.setDescrizioneInglese(entity.getDescrizioneInglese());
-		dto.setDescrizioneSto(entity.getDescrizioneSto());
+		dto.setDescrizioneSito(entity.getDescrizioneSito());
 		dto.setErogatore(entity.getErogatore());
 		dto.setEsportato(entity.getEsportato());
 		dto.setEsportatoPbb(entity.getEsportatoPbb());
@@ -108,7 +108,7 @@ public class ProdottoMapper implements EntityMapper<ProdottoDTO, ProdottoEntity>
 			entity.setDescrizione(dto.getDescrizione());
 			entity.setDescrizioneBreve(dto.getDescrizioneBreve());
 			entity.setDescrizioneInglese(dto.getDescrizioneInglese());
-			entity.setDescrizioneSto(dto.getDescrizioneSto());
+			entity.setDescrizioneSito(dto.getDescrizioneSito());
 			entity.setErogatore(dto.getErogatore());
 			entity.setEsportato(dto.getEsportato());
 			entity.setEsportatoPbb(dto.getEsportatoPbb());
@@ -151,7 +151,7 @@ public class ProdottoMapper implements EntityMapper<ProdottoDTO, ProdottoEntity>
 			dto.setDescrizione(entity.getDescrizione());
 			dto.setDescrizioneBreve(entity.getDescrizioneBreve());
 			dto.setDescrizioneInglese(entity.getDescrizioneInglese());
-			dto.setDescrizioneSto(entity.getDescrizioneSto());
+			dto.setDescrizioneSito(entity.getDescrizioneSito());
 			dto.setErogatore(entity.getErogatore());
 			dto.setEsportato(entity.getEsportato());
 			dto.setEsportatoPbb(entity.getEsportatoPbb());

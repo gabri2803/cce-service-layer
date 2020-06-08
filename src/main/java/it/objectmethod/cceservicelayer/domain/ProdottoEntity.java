@@ -100,8 +100,8 @@ public class ProdottoEntity {
 	@Column(name = "esportato_pbb")
 	private String esportatoPbb;
 
-	@Column(name = "descrizione_sto")
-	private String descrizioneSto;
+	@Column(name = "descrizione_sito")
+	private String descrizioneSito;
 
 	@Column(name = "modo_uso")
 	private String modoUso;
@@ -120,10 +120,11 @@ public class ProdottoEntity {
 
 	@ManyToOne
 	@JsonIgnore
+	@JoinColumn(name = "id_tipo_prod")
 	private TipoProdottoEntity tipoProdotto;
 
-	@JoinColumn(name = "prodotto_id")
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "id")
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<CopiaCommissioneDettaglioEntity> commissioniDettaglio;
 
 	public Long getId() {
@@ -334,12 +335,12 @@ public class ProdottoEntity {
 		this.esportatoPbb = esportatoPbb;
 	}
 
-	public String getDescrizioneSto() {
-		return descrizioneSto;
+	public String getDescrizioneSito() {
+		return descrizioneSito;
 	}
 
-	public void setDescrizioneSto(String descrizioneSto) {
-		this.descrizioneSto = descrizioneSto;
+	public void setDescrizioneSito(String descrizioneSito) {
+		this.descrizioneSito = descrizioneSito;
 	}
 
 	public String getModoUso() {
@@ -408,7 +409,7 @@ public class ProdottoEntity {
 				+ ", lineaInglese=" + lineaInglese + ", molteplicita=" + molteplicita + ", molteplicitaCfCt="
 				+ molteplicitaCfCt + ", numerazione=" + numerazione + ", omaggio=" + omaggio + ", pesoLordo="
 				+ pesoLordo + ", pesoLordoCfCt=" + pesoLordoCfCt + ", prezzo=" + prezzo + ", volume=" + volume
-				+ ", esportatoPbb=" + esportatoPbb + ", descrizioneSto=" + descrizioneSto + ", modoUso=" + modoUso
+				+ ", esportatoPbb=" + esportatoPbb + ", descrizioneSto=" + descrizioneSito + ", modoUso=" + modoUso
 				+ ", web=" + web + ", volumeProdotto=" + volumeProdotto + ", descrizioneBreve=" + descrizioneBreve
 				+ ", pathBrochure=" + pathBrochure + ", commissioniDettaglio=" + commissioniDettaglio
 				+ ", tipoProdotto=" + tipoProdotto + "]";

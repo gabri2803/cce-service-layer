@@ -9,7 +9,6 @@ import it.objectmethod.cceservicelayer.domain.CopiaCommissioneDettaglioEntity;
 import it.objectmethod.cceservicelayer.domain.CopiaCommissioneEntity;
 import it.objectmethod.cceservicelayer.repository.CopiaCommissioneRepository;
 import it.objectmethod.cceservicelayer.service.dto.CopiaCommissioneDTO;
-import it.objectmethod.cceservicelayer.service.mapper.CopiaCommissioneDettaglioMapper;
 import it.objectmethod.cceservicelayer.service.mapper.CopiaCommissioneMapper;
 
 @Component

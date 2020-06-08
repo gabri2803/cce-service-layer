@@ -60,14 +60,16 @@ public class CopiaCommissioneEntity {
 
 	@ManyToOne
 	@JsonIgnore
+    @JoinColumn(name = "id_cliente")
 	private ClienteEntity cliente;
 
 	@JsonIgnore
 	@ManyToOne
+	@JoinColumn(name = "id_condizioni_pagamento")
 	private CondizioniPagamentoEntity condizioniPagamento;
 
-	@JoinColumn(name = "copiaCommissione_id")
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "id")
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<CopiaCommissioneDettaglioEntity> commissioneDettaglio;
 
 	public Integer getId() {

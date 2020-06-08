@@ -56,7 +56,7 @@ public class ProdottoDTO {
 
 	private String esportatoPbb;
 
-	private String descrizioneSto;
+	private String descrizioneSito;
 
 	private String modoUso;
 
@@ -278,12 +278,12 @@ public class ProdottoDTO {
 		this.esportatoPbb = esportatoPbb;
 	}
 
-	public String getDescrizioneSto() {
-		return descrizioneSto;
+	public String getDescrizioneSito() {
+		return descrizioneSito;
 	}
 
-	public void setDescrizioneSto(String descrizioneSto) {
-		this.descrizioneSto = descrizioneSto;
+	public void setDescrizioneSito(String descrizioneSito) {
+		this.descrizioneSito = descrizioneSito;
 	}
 
 	public String getModoUso() {
@@ -344,7 +344,7 @@ public class ProdottoDTO {
 				+ ", lineaInglese=" + lineaInglese + ", molteplicita=" + molteplicita + ", molteplicitaCfCt="
 				+ molteplicitaCfCt + ", numerazione=" + numerazione + ", omaggio=" + omaggio + ", pesoLordo="
 				+ pesoLordo + ", pesoLordoCfCt=" + pesoLordoCfCt + ", prezzo=" + prezzo + ", volume=" + volume
-				+ ", esportatoPbb=" + esportatoPbb + ", descrizioneSto=" + descrizioneSto + ", modoUso=" + modoUso
+				+ ", esportatoPbb=" + esportatoPbb + ", descrizioneSto=" + descrizioneSito + ", modoUso=" + modoUso
 				+ ", web=" + web + ", volumeProdotto=" + volumeProdotto + ", descrizioneBreve=" + descrizioneBreve
 				+ ", pathBrochure=" + pathBrochure + ", tipoProdotto=" + idTipoProdotto + "]";
 	}

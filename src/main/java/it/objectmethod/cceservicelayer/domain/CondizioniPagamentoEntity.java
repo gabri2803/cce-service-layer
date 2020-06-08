@@ -33,7 +33,7 @@ public class CondizioniPagamentoEntity {
 	@Column(name = "attivo")
 	private boolean attivo;
 
-	@JoinColumn(name = "condizioniPagamento_id")
+	@JoinColumn(name = "id")
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<CopiaCommissioneEntity> copiaCommissione;
 
