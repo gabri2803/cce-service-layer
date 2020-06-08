@@ -31,10 +31,4 @@ public class CopiaCommissioneController {
 		ResponseEntity<CopiaCommissioneDTO> resp = commissioneService.saveCopiaCommissione(dto);
 		return resp;
 	}
-
-//	@DeleteMapping("{idCommissione}/delete")
-//	public ResponseEntity<CopiaCommissioneDTO> deleteCopiaCommissione(@PathVariable("idCommissione") int id) {
-//		ResponseEntity<CopiaCommissioneDTO> resp = commissioneService.deleteCopiaCommissione(id);
-//		return resp;
-//	}
 }
